@@ -14,7 +14,7 @@ $sql .= "('$titulo', '$cargaHora', '$ano', '$tipo')";
 
 
 if($conexao->query($sql)  === true){
-    echo "Cliente cadastrado com sucesso!";
+    echo "Atividade cadastrada com sucesso!";
 
 }else{
     echo "erro: " . $sql . "<br>" . $conexao->error;
