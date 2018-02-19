@@ -19,6 +19,7 @@ if($conexao->query($sql)  === true){
 }else{
     echo "erro: " . $sql . "<br>" . $conexao->error;
 }
+
 $conexao->close() ;
 
 ?>
