@@ -8,25 +8,7 @@
 <form id="form_submissao" action="inserir_cadAtv.php" method="post">
     <h3>Atividades Inseridas</h3>
     <!-- aqui aparecem as atividades já inseridas-->
-    <?php
-    <!--chama o arquivo de configuração com o banco-->
-    require conexao.php';
-    //seleciona os dados da tabela produto
-    $query = mysql_query("SELECT id, descricao, preco FROM produto");
-    // abaixo montamos um formulário em html
-    // e preenchemos o select com dados
-    ?>
-    <form name="produto" method="post" action="">
-        <label>Selecione um produto</label>
-        <select>
-            <option>Selecione...</option>
-
-            //abrimos um contador while para que enquanto houver registros ele continua no loopin
-            <?php while($prod = mysql_fetch_array($query)) { ?>
-            <option value="<?php echo $prod['id'] ?>"><?php echo $prod['descricao'] ?></option>
-            <?php } ?>
-        </select>
-    </form>
+   
     <br>
     <br>
     <br>
