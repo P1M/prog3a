@@ -5,7 +5,8 @@
  * Date: 23/02/18
  * Time: 22:01
  */
-
+header(string:)
+Header('Location: submeter_Relatorio_para_Avaliacao.html');
 include('Database.php');
 $db = Database::getInstance();
 $link = $db->getConnection();
@@ -36,4 +37,4 @@ if(mysqli_query($link, $sql)){
 }
 
 mysqli_close($link);
-
+exit();
