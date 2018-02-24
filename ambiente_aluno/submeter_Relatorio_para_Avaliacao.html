@@ -2,12 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Submeter Atividades Complementares</title>
+    <title>Submeter Relatório de Atividades Complementares para Avaliação</title>
     <link rel="stylesheet" href="/home/abilene/IdeaProjects/prog3a/estilo_padrao.css" type="text/css" media="screen">
 </head>
 <form id="form_submissao" action="inserir_cadAtv.php" method="post">
     <h3>Atividades Inseridas</h3>
     <!-- aqui aparecem as atividades já inseridas-->
+    <?php
+    <!--chama o arquivo de configuração com o banco-->
+    require conexao.php';
+    //seleciona os dados da tabela produto
+    $query = mysql_query("SELECT id, descricao, preco FROM produto");
+    // abaixo montamos um formulário em html
+    // e preenchemos o select com dados
+    ?>
+    <form name="produto" method="post" action="">
+        <label>Selecione um produto</label>
+        <select>
+            <option>Selecione...</option>
+
+            //abrimos um contador while para que enquanto houver registros ele continua no loopin
+            <?php while($prod = mysql_fetch_array($query)) { ?>
+            <option value="<?php echo $prod['id'] ?>"><?php echo $prod['descricao'] ?></option>
+            <?php } ?>
+        </select>
+    </form>
     <br>
     <br>
     <br>
@@ -15,6 +34,7 @@
     <input type="submit" value="Submeter Atividades" >
 
 </form>
+    <h5>Atenção! Após submetido o relatório, você não irá inserir novas atividades Complementares, a menos que não tenha terminado o curso.</h5>
 <body>
 
 </body>
