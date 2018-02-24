@@ -22,14 +22,14 @@
 </style>
 
 <h3>Cadastrar Atividade</h3>
-<form id="formulario" action="inserir_atividade.php" method="post">
+<form id="formulario" action="cadastra_atividadades.php" method="post">
 <table>
-    <tr> <td class= "dir">Título da Atividade: </td> <td><input class="campo"  type="text" name="titulo"></td></tr>
-    <tr> <td class= "dir"> Carga Horária: </td> <td> <input class="campo" type="time" name="cargaHora"></td></tr>
-    <tr> <td class= "dir"> Ano: </td> <td> <input class="campo" type="date" name="ano"></td></tr>
-    <tr> <td class= "dir"> Tipo: </td> <td> <input class="campo"    type="text" name="tipo"></td></tr>
-    <tr> <td>  </td> <td><input type="submit" id="enviar"  value="Confirmar" class="botao" name="enviar">
-      <input type="button" id="limpar"  value="Limpar" name="limpar" class="botao"></td> </tr>
+    <tr> <td class= "dir">Título da Atividade: </td> <td><input class="campo"  type="text" name="titulo" id="titulo"></td></tr>
+    <tr> <td class= "dir"> Carga Horária: </td> <td> <input class="campo" type="number" name="cargaHora" id="cargaHora"></td></tr>
+    <tr> <td class= "dir"> Ano: </td> <td> <input class="campo" type="date" name="ano" id="ano" ></td></tr>
+    <tr> <td class= "dir"> Tipo: </td> <td> <input class="campo"    type="text" name="tipo" id="tipo"></td></tr>
+    <tr> <td>  </td> <td><input type="submit" id="enviar"  value="Confirmar" class="botao" name="enviar" id="enviar">
+      <input type="button" id="limpar"  value="Limpar" name="limpar" id="limpar" class="botao"></td> </tr>
 </table>
 </form>
 </body>
