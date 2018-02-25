@@ -21,10 +21,11 @@ if($link === false){
 }
 
 
-
 // Escape user inputs for security
 
 $ra = mysqli_real_escape_string($link, $_REQUEST['ra']);
+
+//$_SESSION["logado"] = TRUE;
 
 $nome = mysqli_real_escape_string($link, $_REQUEST['nome']);
 
@@ -46,7 +47,8 @@ $sql = "INSERT INTO Aluno (RA,nome,cpf,email,curso,senha) VALUES ('$ra', '$nome'
 
 if(mysqli_query($link, $sql)){
 
-    echo "Records added successfully.";
+    header("Location: cad_atividades.html");
+
 
 } else{
 

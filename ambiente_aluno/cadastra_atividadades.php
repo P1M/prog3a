@@ -18,12 +18,14 @@ if($link === false){
 
 }
 
+session_start();
 $titulo = mysqli_real_escape_string($link, $_REQUEST['titulo']);
 $cargaHora = mysqli_real_escape_string($link, $_REQUEST['cargaHora']);
 $ano = mysqli_real_escape_string($link, $_REQUEST['ano']);
 $tipo = mysqli_real_escape_string($link, $_REQUEST['tipo']);
 
-$sql = "INSERT INTO Atividades (Titulo,CargaHoraria,Ano,Tipo,Status,Aluno_RA) VALUES ('$titulo', '$cargaHora', '$ano','$tipo','submetido','1')";
+$ra = $_SESSION["ra"];
+$sql = "INSERT INTO Atividades (Titulo,CargaHoraria,Ano,Tipo,Status,Aluno_RA) VALUES ('$titulo', '$cargaHora', '$ano','$tipo','submetido','$ra')";
 
 
 if(mysqli_query($link, $sql)){

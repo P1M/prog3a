@@ -10,9 +10,11 @@ if($link === false){
 
 }
 
+session_start();
+
 $senha = mysqli_real_escape_string($link, $_REQUEST['senha']);
 $ra = mysqli_real_escape_string($link, $_REQUEST['ra']);
-
+$_SESSION["ra"] = $ra;
 $sql = "SELECT senha,ra FROM Aluno WHERE senha LIKE md5('$senha') AND ra LIKE '$ra';";
 
 
@@ -20,8 +22,7 @@ $sql = "SELECT senha,ra FROM Aluno WHERE senha LIKE md5('$senha') AND ra LIKE '$
 
 if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
 {
-    echo "Usuário existe";
-}
+    header("Location: cad_atividades.html"); }
 
 else{
 
