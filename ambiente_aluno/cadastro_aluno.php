@@ -47,7 +47,7 @@ $sql = "INSERT INTO Aluno (RA,nome,cpf,email,curso,senha) VALUES ('$ra', '$nome'
 
 if(mysqli_query($link, $sql)){
 
-    header("Location: login_aluno.html");
+    header("Location: cad_atividades.html");
 
 
 } else{
