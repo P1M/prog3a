@@ -27,14 +27,8 @@
     <tr> <td class= "dir">Título da Atividade: </td> <td><input class="campo"  type="text" name="titulo" id="titulo"></td></tr>
     <tr> <td class= "dir"> Carga Horária: </td> <td> <input class="campo" type="number" name="cargaHora" id="cargaHora"></td></tr>
     <tr> <td class= "dir"> Ano: </td> <td> <input class="campo" type="date" name="ano" id="ano" ></td></tr>
-    <tr> <td class= "dir"> Tipo: </td> <td> <input class="campo"    type="text" name="tipo" id="tipo"></td></tr>
-
-    <tr> <td>  </td> <td><input type="submit" id="enviar"  value="Confirmar" class="botao" name="enviar" id="enviar">
-      <input type="button" id="limpar"  value="Limpar" name="limpar" id="limpar" class="botao"></td> </tr>
-</table>
-
-    <?php
-include('Database.php');
+    <tr><td class="dir"> Tipo: </td> <td><?php
+    include('Database.php');
     $db = Database::getInstance();
     $link = $db->getConnection();
 
@@ -42,11 +36,16 @@ include('Database.php');
 
     echo "<select name='cidade'>";
     while ($reg = mysqli_fetch_object($rs)) {
-    echo "<option value='$reg->Atividade'>$reg->Atividade</option>";
+        echo "<option value='$reg->Atividade' name='tipo' id='tipo'>$reg->Atividade</option>";
     }
     echo "</select>";
 
-    ?>
+            ?></td></tr>
+    <tr> <td>  </td> <td><input type="submit" id="enviar"  value="Confirmar" class="botao" name="enviar" id="enviar">
+      <input type="button" id="limpar"  value="Limpar" name="limpar" id="limpar" class="botao"></td> </tr>
+</table>
+
+
 
 </form>
 

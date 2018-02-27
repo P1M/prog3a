@@ -27,7 +27,7 @@ $sql = "SELECT senha,ra FROM Aluno WHERE senha LIKE md5('$senha') AND ra LIKE '$
 
 if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
 {
-    //header("Location: cadastra_atividades_aluno.html"); }
+    header("Location: cadastra_atividades_aluno.phtml");
 echo "$atividades";}
 else{
 
