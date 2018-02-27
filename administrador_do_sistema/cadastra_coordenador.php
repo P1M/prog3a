@@ -39,25 +39,22 @@ $sql = "INSERT INTO CoordenadorAdministrador (nome,email,tipo) VALUES ('$name', 
 
 $sql2 = "INSERT INTO Senha (senha,CoordenadorAdministrador_email) VALUES ('$senha', '$email')";
 
-if(mysqli_query($link, $sql)){
+if(mysqli_query($link, $sql) and mysqli_query($link, $sql2)){
 
-    echo "Records added successfully.";
-
-} else{
-
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-
-}
-
-if(mysqli_query($link, $sql2)){
-
-    echo "Records added successfully.";
+    echo '<script type="text/javascript">alert("Coordenador cadastrado com sucesso!"); window.location.href=\'cadastra_coordenador.html\';</script>';
+   // redirect('cadastra_coordenador.html');
 
 } else{
 
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-
 }
+
+
+
+
+
+
+
 
 
 // close connection
