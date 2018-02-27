@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>S.C.A.C&sup3;</title>
+<!-- TemplateEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+</head>
+
+<body link="#000000" vlink="#000000" alink="#999999">
+<div id="Layer1" style="position:absolute; left:46px; top:-3px; width:47px; height:74px; z-index:1"><img src="../imagens%20modelo/menu.jpg" width="276" height="690"></div>
+<div id="Layer2" style="position:absolute; left:61px; top:37px; width:170px; height:20px; z-index:2"><a href="../ambiente_aluno/login_aluno.html" target="mainFrame"><strong><font color="#000000">Cadastrar 
+  aluno </font></strong></a></div>
+<div id="Layer3" style="position:absolute; left:61px; top:69px; width:180px; height:15px; z-index:3"><a href="../ambiente_aluno/login_aluno.html" target="mainFrame"><strong><font color="#000000">Acompanhar 
+  processos</font></strong></a></div>
+<!-- TemplateBeginEditable name="EditRegion1" -->EditRegion1<!-- TemplateEndEditable -->
+<div id="Layer4" style="position:absolute; left:61px; top:101px; width:169px; height:20px; z-index:4"><strong><font color="#000000"><a href="../PPP.pdf" target="_blank">Normas 
+  das atividades</a></font></strong></div>
+</body>
+</html>
