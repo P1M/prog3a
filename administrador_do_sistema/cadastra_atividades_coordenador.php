@@ -6,7 +6,7 @@
  * Time: 22:01
  */
 //apos inserir redireciona pagina php para a pagina q aparece todas as atividades listadas para submissao
-Header('Location: submeter_Relatorio_para_Avaliacao.html');
+//Header('Location: submeter_Relatorio_para_Avaliacao.html');
 include('Database.php');
 $db = Database::getInstance();
 $link = $db->getConnection();
@@ -21,16 +21,16 @@ if($link === false){
 session_start();
 $titulo = mysqli_real_escape_string($link, $_REQUEST['titulo']);
 $cargaHora = mysqli_real_escape_string($link, $_REQUEST['cargaHora']);
-$ano = mysqli_real_escape_string($link, $_REQUEST['ano']);
-$tipo = mysqli_real_escape_string($link, $_REQUEST['tipo']);
+$maxPart = mysqli_real_escape_string($link, $_REQUEST['maxPart']);
 
-$ra = $_SESSION["ra"];
-$sql = "INSERT INTO Atividades (Titulo,CargaHoraria,Ano,Tipo,Status,Aluno_RA) VALUES ('$titulo', '$cargaHora', '$ano','$tipo','submetido','$ra')";
+$coordenador = $_SESSION["email"];
+$sql = "INSERT INTO Tipo_Atividade (Atividade,CargaHoraria,LimiteParticipacao,CoordenadorAdministrador_email) VALUES ('$titulo', '$cargaHora', '$maxPart','$coordenador')";
 
 
 if(mysqli_query($link, $sql)){
 
     echo "Records added successfully.";
+
 
 } else{
 
