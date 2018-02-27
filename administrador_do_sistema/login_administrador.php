@@ -19,7 +19,7 @@ $sql = "SELECT senha FROM Senha WHERE senha LIKE md5('$senha');";
 
 
 
-if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
+if(mysqli_num_rows(mysqli_query($link, $sql)) > 0)
 {
     header("Location: cadastra_coordenador.html"); }
 
