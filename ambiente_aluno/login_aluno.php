@@ -27,9 +27,15 @@ $sql = "SELECT senha,ra FROM Aluno WHERE senha LIKE md5('$senha') AND ra LIKE '$
 
 if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
 {
-    header("Location: cadastra_atividades_aluno.phtml");
-echo "$atividades";}
-else{
+
+    $rs = mysqli_query($link, "SELECT travado FROM Aluno WHERE Aluno.travado = 'sim' and aluno.RA = $ra;");
+    if ($rs != NULL){
+        header("Location: lista_atividades.phtml");
+    }else{
+        header("Location: cadastra_atividades_aluno.phtml");
+    }
+
+}else{
 
     echo "Usuário não encontrado. " . mysqli_error($link);
 
