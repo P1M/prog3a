@@ -12,10 +12,9 @@ if($link === false){
 
 session_start();
 
-$ra = mysqli_real_escape_string($link, $_REQUEST['ra']);
-$_SESSION["ra"] = $ra;
-$sql = "INSERT INTO ALUNO (travado) VALUES ('sim') WHERE ALUNO.RA = $ra;";
+$ra = $_SESSION["ra"];
 
-echo $ra;
+$sql = "UPDATE Aluno SET travado = 'sim' WHERE RA = $ra;";
+
 mysqli_query($link, $sql);
 
