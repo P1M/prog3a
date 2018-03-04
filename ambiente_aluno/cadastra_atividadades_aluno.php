@@ -6,7 +6,7 @@
  * Time: 22:01
  */
 //apos inserir redireciona pagina php para a pagina q aparece todas as atividades listadas para submissao
-Header('Location: submeter_Relatorio_para_Avaliacao.html');
+Header('Location: cadastra_atividades_aluno.phtml');
 include('Database.php');
 $db = Database::getInstance();
 $link = $db->getConnection();

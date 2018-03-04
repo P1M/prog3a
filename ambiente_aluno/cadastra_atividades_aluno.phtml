@@ -32,11 +32,11 @@
     $db = Database::getInstance();
     $link = $db->getConnection();
 
-    $rs = mysqli_query($link, "SELECT * FROM Tipo_Atividade");
+    $rs = mysqli_query($link, "SELECT * FROM Tipo_Atividade;");
 
-    echo "<select name='cidade'>";
+    echo "<select name='tipo' id='tipo'>";
     while ($reg = mysqli_fetch_object($rs)) {
-        echo "<option value='$reg->Atividade' name='tipo' id='tipo'>$reg->Atividade</option>";
+        echo "<option value='$reg->Atividade'>$reg->Atividade</option>";
     }
     echo "</select>";
 
@@ -46,7 +46,44 @@
 </table>
 
 
+    <table>
+        <thead>
+        <tr>
+            <td>Titulo</td>
+            <td>Carga Horária</td>
+            <td>Ano</td>
+            <td>Tipo</td>
 
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        $db = Database::getInstance();
+        $link = $db->getConnection();
+        session_start();
+        $ra = $_SESSION["ra"];
+
+        $results = mysqli_query($link,"SELECT * FROM Atividades WHERE Aluno_RA like '$ra'");
+
+        //echo $results;
+        while($row = mysqli_fetch_array($results)) {
+            ?>
+            <tr>
+                <td><?php echo $row['Titulo']?></td>
+                <td><?php echo $row['CargaHoraria']?></td>
+                <td><?php echo $row['Ano']?></td>
+                <td><?php echo $row['Tipo']?></td>
+
+            </tr>
+
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
+    <form id="trava_aluno" action="trava_aluno.php" method="post">
+
+        <input type="submit" value="Submeter" class="botao" name="trava_aluno" id="trava_aluno">    </form>
 </form>
 
 
