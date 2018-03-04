@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+<style>
+    h1{
+        text-align: left;
+    }
+</style>
 <header>
     <!-- Cabecalho do site-->
     <h1 name="Pagnome">Ambiente do Coordenador</h1>
@@ -18,9 +22,19 @@
 </header>
 
 <section>
-    
+    <input id="mail" placeholder="E-mail">
+    <input id="nome" placeholder="Nome Professor">
+    <button onclick="attr()" class="prog3-button prog3-margin-top prog3-white">Cadastrar</button>
 
 </section>
+
+    <script>
+        function attr() {
+            var x = document.getElementById('mail')
+            var z = document.getElementById('nome')
+        }
+
+    </script>
 
 </body>
 </html>
