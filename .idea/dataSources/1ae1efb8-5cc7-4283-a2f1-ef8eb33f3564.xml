@@ -48,110 +48,114 @@
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="20" parent="9" name="PRIMARY">
+    <column id="20" parent="9" name="travado">
+      <Position>7</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="21" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RA</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="21" parent="10" name="Titulo">
+    <column id="22" parent="10" name="Titulo">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="10" name="CargaHoraria">
+    <column id="23" parent="10" name="CargaHoraria">
       <Position>2</Position>
       <DataType>int(3)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="10" name="Ano">
+    <column id="24" parent="10" name="Ano">
       <Position>3</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="10" name="Tipo">
+    <column id="25" parent="10" name="Tipo">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="10" name="Status">
+    <column id="26" parent="10" name="Status">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="10" name="Aluno_RA">
+    <column id="27" parent="10" name="Aluno_RA">
       <Position>6</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="27" parent="10" name="fk_Atividades_Aluno1_idx">
+    <index id="28" parent="10" name="fk_Atividades_Aluno1_idx">
       <ColNames>Aluno_RA</ColNames>
     </index>
-    <foreign-key id="28" parent="10" name="fk_Atividades_Aluno1">
+    <foreign-key id="29" parent="10" name="fk_Atividades_Aluno1">
       <ColNames>Aluno_RA</ColNames>
       <RefSchemaName>prog3</RefSchemaName>
       <RefTableName>Aluno</RefTableName>
       <RefColNames>RA</RefColNames>
     </foreign-key>
-    <column id="29" parent="11" name="email">
+    <column id="30" parent="11" name="email">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="11" name="nome">
+    <column id="31" parent="11" name="nome">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="11" name="tipo">
+    <column id="32" parent="11" name="tipo">
       <Position>3</Position>
       <DataType>tinyint(4)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="32" parent="11" name="PRIMARY">
+    <key id="33" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>email</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="12" name="senha">
+    <column id="34" parent="12" name="senha">
       <Position>1</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="12" name="CoordenadorAdministrador_email">
+    <column id="35" parent="12" name="CoordenadorAdministrador_email">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="35" parent="12" name="fk_Senha_CoordenadorAdministrador_idx">
+    <index id="36" parent="12" name="fk_Senha_CoordenadorAdministrador_idx">
       <ColNames>CoordenadorAdministrador_email</ColNames>
     </index>
-    <foreign-key id="36" parent="12" name="fk_Senha_CoordenadorAdministrador">
+    <foreign-key id="37" parent="12" name="fk_Senha_CoordenadorAdministrador">
       <ColNames>CoordenadorAdministrador_email</ColNames>
       <RefSchemaName>prog3</RefSchemaName>
       <RefTableName>CoordenadorAdministrador</RefTableName>
       <RefColNames>email</RefColNames>
     </foreign-key>
-    <column id="37" parent="13" name="Atividade">
+    <column id="38" parent="13" name="Atividade">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="38" parent="13" name="CargaHoraria">
+    <column id="39" parent="13" name="CargaHoraria">
       <Position>2</Position>
       <DataType>int(4)|0</DataType>
     </column>
-    <column id="39" parent="13" name="LimiteParticipacao">
+    <column id="40" parent="13" name="LimiteParticipacao">
       <Position>3</Position>
       <DataType>int(4)|0</DataType>
     </column>
-    <column id="40" parent="13" name="CoordenadorAdministrador_email">
+    <column id="41" parent="13" name="CoordenadorAdministrador_email">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="41" parent="13" name="fk_Tipo_Atividade_CoordenadorAdministrador1_idx">
+    <index id="42" parent="13" name="fk_Tipo_Atividade_CoordenadorAdministrador1_idx">
       <ColNames>CoordenadorAdministrador_email</ColNames>
     </index>
-    <foreign-key id="42" parent="13" name="fk_Tipo_Atividade_CoordenadorAdministrador1">
+    <foreign-key id="43" parent="13" name="fk_Tipo_Atividade_CoordenadorAdministrador1">
       <ColNames>CoordenadorAdministrador_email</ColNames>
       <RefSchemaName>prog3</RefSchemaName>
       <RefTableName>CoordenadorAdministrador</RefTableName>
