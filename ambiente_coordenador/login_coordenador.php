@@ -14,15 +14,22 @@ session_start();
 
 $senha = mysqli_real_escape_string($link, $_REQUEST['senha']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-$_SESSION["email"] = $email;
-$sql = "SELECT senha,email FROM Senha,CoordenadorAdministrador WHERE senha LIKE md5('$senha') AND email LIKE '$email';";
+
+$sql = "SELECT CoordenadorAdministrador.email, Senha.senha
+FROM CoordenadorAdministrador
+LEFT JOIN Senha ON CoordenadorAdministrador.email = Senha.CoordenadorAdministrador_email
+WHERE Senha.senha LIKE md5('$senha')
+AND CoordenadorAdministrador.email LIKE '$email'
+AND CoordenadorAdministrador.tipo LIKE '2' ;";
+
+// $sql = "SELECT senha FROM Senha WHERE senha LIKE md5('$senha');";
 
 
 
 
-if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
+if(mysqli_num_rows(mysqli_query($link, $sql)) > 0)
 {
-    header("Location: cadastra_atividades_coordenador.html"); }
+    header("Location: cadastrar_coordenador.html"); }
 
 else{
 

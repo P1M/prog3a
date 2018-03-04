@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
 <html>
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Login aluno</title>
+
+    <title>Sistema de Controle de Atividades Complementares</title>
+
+    <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+
 </head>
 
 <body>
 
-<p></p>
-<h3>Ambiente do aluno</h3>
-<form action="login_aluno.php" method="post">
-    RA: <input type="text" name="ra" id="ra"><br>
-    Senha: <input type="password" name="senha" id="senha"><br>
-    <input type="submit" id="enviar"  value="Acessar" name="enviar" id="enviar">
+<br>
+<div class="login-card">
 
-</form>
+    <h2>Login Aluno</h2><br>
 
-<form action="cad_aluno.html" method="post">
-
-    <input type="submit" id="ncadastrado"  value="Não sou cadastrado" name="ncadastrado" id="ncadastrado">
+    <form action="login_aluno.php" method="post">
+        <input type="text" name="ra" placeholder="RA">
+        <input type="password" name="senha" placeholder="Password">
+        <input type="submit" name="enviar" id="enviar" class="login login-submit" value="Login">
     </form>
 
+
+</div>
+
+<!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
+
+<script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+
 </body>
+
 </html>
