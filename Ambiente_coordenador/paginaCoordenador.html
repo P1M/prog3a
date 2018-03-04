@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>Coordenador</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="estilo.css">
@@ -33,8 +34,6 @@
 <!-- Definindo a barra de navegacao na parte de cima do site-->
 <div class="prog3-top">
     <div class="prog3-bar prog3-blue prog3-card prog3-alinha-esquerda prog3-large">
-        <a class="prog3-item-barra prog3-button prog3-hide-medium prog3-hide-large prog3-right prog3-padding-large prog3-hover-white prog3-large prog3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i>
-        </a>
         <a href="#" class="prog3-item-barra prog3-button prog3-padding-large prog3-white">HOME</a>
         <a href="#" class="prog3-item-barra prog3-button prog3-hide-small prog3-padding-large prog3-hover-white">Relatorio de atividades - Alunos</a>
         <a href="#" class="prog3-item-barra prog3-button prog3-hide-small prog3-padding-large prog3-hover-white" onclick="abrirPag('CadastroProfessor.html')">Cadastro de professor</a>
@@ -42,6 +41,8 @@
 
     <!-- Barra de navegacao para telas pequenas -->
     <div id="navDemo" class="prog3-bar-block prog3-white prog3-hide prog3-hide-large prog3-hide-medium prog3-large" onclick="myFunction()">
+        <a class="prog3-item-barra prog3-button prog3-hide-medium prog3-hide-large prog3-right prog3-padding-large prog3-hover-white prog3-large prog3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i>
+        </a>
         <a href="#" class="prog3-item-barra prog3-button prog3-padding-large">Relatorio de atividades - Alunos</a>
         <a href="#" class="prog3-item-barra prog3-button prog3-padding-large">Cadastro de professor</a>
 
@@ -54,7 +55,7 @@
 
     <!--O placeholder faz com que o conteudo pre escrito no box seja apagado quando o usuario comecar a digitar-->
     <input type="text" name="busca1" class="box-model" placeholder="Buscar Nome"><br>
-    <button onclick="altera_secao()" class="prog3-button prog3-padding-large prog3-large prog3-margin-top prog3-black">Buscar</button>
+    <button onclick="IniciaBusca()" class="prog3-button prog3-padding-large prog3-large prog3-margin-top prog3-black">Buscar</button>
 
 </header>
 <div>
@@ -79,6 +80,11 @@
             x.className = x.className.replace(" prog3-show", "");
         }
     }
+
+    function IniciaBusca() {
+        document.f1.action = "Busca.php"
+    }
+
 </script>
 
 </html>
