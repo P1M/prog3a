@@ -64,7 +64,7 @@
         session_start();
         $ra = $_SESSION["ra"];
 
-        $results = mysqli_query($link,"SELECT * FROM Atividades WHERE Aluno_RA like '$ra'");
+        $results = mysqli_query($link,"SELECT * FROM Atividades WHERE Aluno_RA like '$ra' ORDER BY Ano ASC;");
 
         //echo $results;
         while($row = mysqli_fetch_array($results)) {

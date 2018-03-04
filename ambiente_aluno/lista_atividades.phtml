@@ -2,8 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Atividades Complementares</title>
-    <link rel="stylesheet" href="" type="text/css" media="screen">
+    <title>Cadastro Atividades Complementares</title>
+    <link rel="stylesheet" href="/home/abilene/IdeaProjects/prog3a/estilo_padrao.css" type="text/css" media="screen">
 </head>
 <body>
 
@@ -22,24 +22,32 @@
 </style>
 
 
-<table>
+<h3>Lista de Atividades Cadastradas</h3>
+
+
+
+    <table>
         <thead>
         <tr>
             <td>Titulo</td>
             <td>Carga Horária</td>
             <td>Ano</td>
             <td>Tipo</td>
+            <td>Status</td>
+
 
         </tr>
         </thead>
         <tbody>
         <?php
+        include('Database.php');
+
         $db = Database::getInstance();
         $link = $db->getConnection();
         session_start();
         $ra = $_SESSION["ra"];
 
-        $results = mysqli_query($link,"SELECT * FROM Atividades WHERE Aluno_RA like '$ra'");
+        $results = mysqli_query($link,"SELECT * FROM Atividades WHERE Aluno_RA like '$ra' ORDER BY Ano ASC;");
 
         //echo $results;
         while($row = mysqli_fetch_array($results)) {
@@ -58,5 +66,7 @@
         ?>
         </tbody>
     </table>
-</body>
-</html>
+
+
+
+

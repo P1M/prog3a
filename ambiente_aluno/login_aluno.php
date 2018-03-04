@@ -23,15 +23,17 @@ $_SESSION["atividades"] = $atividades;
 $sql = "SELECT senha,ra FROM Aluno WHERE senha LIKE md5('$senha') AND ra LIKE '$ra';";
 
 
-
+//echo $ra;
 
 if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
 {
 
-    $rs = mysqli_query($link, "SELECT travado FROM Aluno WHERE Aluno.travado = 'sim' and aluno.RA = $ra;");
-    if ($rs != NULL){
-        header("Location: lista_atividades.phtml");
+    $rs = mysqli_query($link, "SELECT travado FROM Aluno WHERE Aluno.travado LIKE 'sim' and Aluno.RA LIKE $ra;");
+    $row = mysqli_fetch_array($rs);
+    if ('sim' == $row['travado']){
+       header("Location: lista_atividades.phtml");
     }else{
+
         header("Location: cadastra_atividades_aluno.phtml");
     }
 
