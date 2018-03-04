@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<title>Coordenador</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script language="javascript" src="verificaNav.js"></script>
+<script language="JavaScript" src="alteraSessao.js"></script>
+
+<style>
+
+    h1, h2, h3, body{
+        font-family: "Lato", sans-serif;
+    }
+
+    .prog3-bar, h1, button, p{
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .fa-anchor, .fa-coffee{
+        font-size: 200px;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+</style>
+
+<!-- Definindo a barra de navegacao na parte de cima do site-->
+<div class="prog3-top">
+    <div class="prog3-bar prog3-blue prog3-card prog3-alinha-esquerda prog3-large">
+        <a class="prog3-item-barra prog3-button prog3-hide-medium prog3-hide-large prog3-right prog3-padding-large prog3-hover-white prog3-large prog3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i>
+        </a>
+        <a href="#" class="prog3-item-barra prog3-button prog3-padding-large prog3-white">HOME</a>
+        <a href="#" class="prog3-item-barra prog3-button prog3-hide-small prog3-padding-large prog3-hover-white">Relatorio de atividades - Alunos</a>
+        <a href="#" class="prog3-item-barra prog3-button prog3-hide-small prog3-padding-large prog3-hover-white" onclick="abrirPag('CadastroProfessor.html')">Cadastro de professor</a>
+    </div>
+
+    <!-- Barra de navegacao para telas pequenas -->
+    <div id="navDemo" class="prog3-bar-block prog3-white prog3-hide prog3-hide-large prog3-hide-medium prog3-large" onclick="myFunction()">
+        <a href="#" class="prog3-item-barra prog3-button prog3-padding-large">Relatorio de atividades - Alunos</a>
+        <a href="#" class="prog3-item-barra prog3-button prog3-padding-large">Cadastro de professor</a>
+
+    </div>
+</div>
+
+<!--Essa secao sera alterada quando houver o clique de qualquer botao-->
+<header class="prog3-container prog3-center" style="padding:128px 16px" id="altera">
+    <h1 class="prog3-margin prog3-jumbo">AMBIENTE DO COORDENADOR</h1>
+
+    <!--O placeholder faz com que o conteudo pre escrito no box seja apagado quando o usuario comecar a digitar-->
+    <input type="text" name="busca1" class="box-model" placeholder="Buscar Nome"><br>
+    <button onclick="altera_secao()" class="prog3-button prog3-padding-large prog3-large prog3-margin-top prog3-black">Buscar</button>
+
+</header>
+<div>
+
+
+</div>
+
+<footer>
+    <div>
+        <p class="prog3-hover-opacidade prog3-center">Desenvolvido por: Orlando, Abilene, Renato, Brendon, Mauricio</p>
+    </div>
+
+</footer>
+
+<script>
+    // Usado para abrir o menu em telas pequenas (celular)
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("prog3-show") == -1) {
+            x.className += " prog3-show";
+        } else {
+            x.className = x.className.replace(" prog3-show", "");
+        }
+    }
+</script>
+
+</html>

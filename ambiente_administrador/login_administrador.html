@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login administrador</title>
+    <link rel="stylesheet" href="CSS/estilo_padrao.css" type="text/css" media="screen">
+</head>
+<body>
+
+<style>
+
+    form {position: relative;
+        top: 0px; right: 0px; bottom: 0px; left: 250px;
+        padding: 10px; margin:1em auto;
+        background: #fff;box-sizing: border-box;}
+
+    h3 {color: #0000ff; font-size: 22px;text-align: center}
+    .campo{width:400px}
+    table .dir{font-family: cursive, helvetica; text-align: right; font-size: 18px}
+    .botao{width: 205px; height: 35px ; font-size: 18px; color: #0000ff;}
+
+</style>
+
+<h3>Ambiente do administrador</h3>
+<form action="login_administrador.php" method="post">
+    <table>
+
+        <tr> <td class= "dir"> E-mail: </td> <td> <input class="campo"    type="email" name="email" id="email" ></td></tr>
+        <tr> <td class= "dir"> Senha: </td> <td> <input class="campo"    type="password" name="senha" id="senha"></td></tr>
+        <tr> <td>  </td> <td><input type="submit" id="enviar"  value="Acessar" class="botao" name="enviar"></td></tr>
+    </table>
+</form>
+
+</body>
+</html>
