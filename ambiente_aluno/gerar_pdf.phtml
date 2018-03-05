@@ -1,0 +1,62 @@
+﻿<?php
+    $relatorio = "
+        <h3>Lista de Atividades Cadastradas</h3>
+        <table>
+            <thead>
+            <tr>
+                <td>Titulo</td>
+                <td>Carga Horária</td>
+                <td>Ano</td>
+                <td>Tipo</td>
+                <td>Status</td>
+            </tr>
+            </thead>
+        <tbody>";
+
+    include('../Database.php');
+
+    $db = Database::getInstance();
+    $link = $db->getConnection();
+    session_start();
+    $ra = $_SESSION["ra"];
+
+    $results = mysqli_query($link,"SELECT * FROM Atividades WHERE Aluno_RA like '$ra' ORDER BY Ano ASC;");
+
+    //echo $results;
+    while($row = mysqli_fetch_assoc($results)) {
+
+        $relatorio .= '<tr>';
+        $relatorio .= '<td>' . $row['Titulo'] . '</td>';
+        $relatorio .= '<td>' . $row['CargaHoraria'] . '</td>';
+        $relatorio .= '<td>' . $row['Ano'] . '</td>';
+        $relatorio .= '<td>' . $row['Tipo'] . '</td>';
+        $relatorio .= '<td>' . $row['Status'] . '</td></tr>';
+    }
+        $relatorio .= '</tbody>';
+        $relatorio .= '</table>';
+
+
+        //referenciar o DomPDF com namespace
+        use Dompdf\Dompdf;
+
+        // include autoloader
+        require_once("bib_dompdf/autoload.inc.php");
+
+        //Criando a Instancia
+        $dompdf = new DOMPDF();
+
+        // Carrega seu HTML
+        $dompdf->loadHtml('
+			<h1 style="text-align: center;">Relatório de Atividades Submetidas</h1>
+			'. $relatorio .'
+		');
+
+        //Renderizar o html
+        $dompdf->render();
+
+        //Exibibir a página
+        $dompdf->stream( "nome_relatorio.pdf",
+            array("Attachment" => false //Para realizar o download somente alterar para true
+            ));
+
+?>
