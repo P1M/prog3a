@@ -61,6 +61,14 @@
         echo "</select>";
 
         ?></td></tr>
+    
+  <form id="formulario" name="formulario" method="get" action="../ambiente_professor/recebe_link.php">
+  Nome: <input id="RA" name="RA" type="text" value="<php? $RA ?>" />
+    <?php $RA = dechex($RA); ?>
+    
+  <br />
+  <input id="btnenviar" name="btnenviar" type="submit" value="Gerar Link" />
+ </form>
 
 
 </body>
