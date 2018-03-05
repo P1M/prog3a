@@ -24,8 +24,8 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><a href="cadastrar_professor.html">Cadastrar Professor</a></li>
-                <li ><a href="buscar_aluno.phtml">Buscar Aluno</a></li>
-                <li class="active"><a href="listar_alunos.phtml">Listar Alunos</a></li>
+                <li class="active"><a href="buscar_aluno.phtml">Buscar Aluno</a></li>
+                <li><a href="listar_alunos.phtml">Listar Alunos</a></li>
                 <li><a href="designar_professor.html">Designar Professor</a></li>
                 <li><a href="cadastra_atividades_coordenador.html">Nova Atividade</a></li>
             </ul>
@@ -33,7 +33,12 @@
     </nav>
 </header>
 
-
+<form id="formulario" name = "f1" method="post" Onsubmit="validarSenha()">
+    <table>
+        <tr> <td class= "dir">RA: </td> <td><input class="campo"  type="number" name="ra" id="ra" maxlength="12" onkeypress='return SomenteNumero(event)'> </td></tr>
+        <tr> <td>  </td> <td><input type="submit" id="enviar"  value="Buscar" class="botao" name="enviar">
+    </table>
+</form>
 
 
 <table>
@@ -52,32 +57,32 @@
 
 
     <?php
-    // session_start();
-    // $ra = $_SESSION['ra'];
+   // session_start();
+   // $ra = $_SESSION['ra'];
 
 
     include "../Database.php";
     $db = Database::getInstance();
     $link = $db->getConnection();
 
-    //$ra = mysqli_real_escape_string($link, $_REQUEST['ra']);
+    $ra = mysqli_real_escape_string($link, $_REQUEST['ra']);
 
-    $results = mysqli_query($link,"SELECT * FROM Aluno;");
+    $results = mysqli_query($link,"SELECT * FROM Aluno WHERE RA like $ra;");
 
     //echo $results;
     while($row = mysqli_fetch_array($results)) {
-        ?>
-        <tr>
-            <td><?php echo $row['RA']?></td>
-            <td><?php echo $row['nome']?></td>
-            <td><?php echo $row['cpf']?></td>
-            <td><?php echo $row['email']?></td>
-            <td><?php echo $row['curso']?></td>
+    ?>
+    <tr>
+        <td><?php echo $row['RA']?></td>
+        <td><?php echo $row['nome']?></td>
+        <td><?php echo $row['cpf']?></td>
+        <td><?php echo $row['email']?></td>
+        <td><?php echo $row['curso']?></td>
 
 
-        </tr>
+    </tr>
 
-        <?php
+    <?php
     }
     ?>
     </tbody>
