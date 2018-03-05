@@ -20,12 +20,12 @@ if($link === false){
 
 }
 
-
+session_start();
 // Escape user inputs for security
 
 $ra = mysqli_real_escape_string($link, $_REQUEST['ra']);
 
-//$_SESSION["logado"] = TRUE;
+$_SESSION["ra"] = $ra;
 
 $nome = mysqli_real_escape_string($link, $_REQUEST['nome']);
 
