@@ -19,24 +19,23 @@
 <body>
 
 <header>
-    <!-- Cabecalho do site-->
+<form>
     <h1 name="Pagnome">Ambiente do Coordenador</h1>
     <h2 name="CadProf">Cadastro Professor</h2>
 </header>
 
 <section>
-    <input id="mail" placeholder="E-mail">
-    <input id="nome" placeholder="Nome Professor">
-    <button onclick="attr()" class="prog3-button prog3-margin-top prog3-white">Cadastrar</button>
+    <input id="mail" name="mail" placeholder="E-mail" type="email">
+    <input id="nome" name="nome" placeholder="Nome Professor" type="text">
+
+
+
+
+    <button onclick="cadastra_professores.php" class="prog3-button prog3-margin-top prog3-white">Cadastrar</button>
 
 </section>
 
-    <script>
-        function attr() {
-            document.f1.action = "CadastraProfessor.php"
-        }
 
-    </script>
 
 </body>
 </html>

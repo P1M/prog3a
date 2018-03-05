@@ -29,7 +29,7 @@ AND CoordenadorAdministrador.tipo LIKE '1' ;";
 
 if(mysqli_num_rows(mysqli_query($link, $sql)) > 0)
 {
-    header("Location: cadastrar_coordenador.html"); }
+    header("Location: cadastrar_professor.html"); }
 
 else{
 

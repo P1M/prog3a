@@ -1,4 +1,12 @@
+
+
 <?php
+
+/* Attempt MySQL server connection. Assuming you are running MySQL
+
+server with default setting (user 'root' with no password) */
+
+
 //$link = mysqli_connect("localhost", "root", "pp", "prog3");
 
 include('Database.php');
@@ -20,20 +28,20 @@ if($link === false){
 
 $nome = mysqli_real_escape_string($link, $_REQUEST['nome']);
 
-$email = mysqli_real_escape_string($link, $_REQUEST['mail']);
+$email = mysqli_real_escape_string($link, $_REQUEST['email']);
 
 
 
 
 // attempt insert query execution
 
-$sql = "INSERT INTO Professor (email, nome) VALUES ('$email', '$nome')";
+$sql = "INSERT INTO Professor (nome,email) VALUES ('$nome', '$email');";
 
 
-if(mysqli_query($link, $sql) and mysqli_query($link, $sql2)){
+if(mysqli_query($link, $sql)){
 
-    echo '<script type="text/javascript">alert("Professor cadastrado com sucesso!"); window.location.href=\'CadastroProfessor.html\';</script>';
-    // redirect('cadastrar_coordenador.html');
+    echo '<script type="text/javascript">alert("Professor cadastrado com sucesso!"); window.location.href=cadastrar_professor.html/script>';
+    redirect('cadastrar_professor.html');
 
 } else{
 
