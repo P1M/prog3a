@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="PhpProjectSharedConfiguration" php_language_level="7" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" />
+      <phpunit_by_deployment server_id="81914cc7-3133-4d60-91a8-d3f371618bae" load_method="CUSTOM_LOADER" custom_loader_path="/home/abilene/IdeaProjects/prog3a/index.html" phpunit_phar_path="" />
+    </phpunit_settings>
+  </component>
 </project>
