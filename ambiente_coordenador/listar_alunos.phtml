@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Alunos</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+<style>
+
+    form {position: relative;
+        top: 0px; right: 0px; bottom: 0px; left: 250px;
+        padding: 10px; margin:1em auto;
+        background: #fff;box-sizing: border-box;}
+
+    h3 {color: #0000ff; font-size: 22px;text-align: center}
+    .campo{width:400px}
+    table .dir{font-family: cursive, helvetica; text-align: right; font-size: 18px}
+    .botao{width: 205px; height: 35px ; font-size: 18px; color: #0000ff;}
+
+</style>
+
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="cadastrar_professor.html">Cadastrar Professor</a></li>
+                <li><a href="buscar_aluno.html">Buscar Aluno</a></li>
+                <li class="active"><a href="listar_alunos.phtml">Listar Alunos</a></li>
+                <li><a href="designar_professor.html">Designar Professor</a></li>
+                <li><a href="cadastra_atividades_coordenador.html">Nova Atividade</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <h3>Lista de Alunos com adtividades cadastradas</h3>
+
+
+
+    <table>
+        <thead>
+        <tr>
+            <td>RA </td>
+            <td>Nome </td>
+            <td>CPF </td>
+            <td>E-mail </td>
+            <td>Curso </td>
+        </tr>
+        </thead>
+<!-- ------------------------------------------------------->
+
+        <tbody>
+        <?php
+        include('../Database.php');
+
+        $db = Database::getInstance();
+        $link = $db->getConnection();
+        session_start();
+
+        $ra = 10;
+
+        $results = mysqli_query($link,"SELECT * FROM Aluno;");
+
+        //echo $results;
+        while($row = mysqli_fetch_array($results)) {
+            ?>
+            <tr>
+                <td><?php echo $row['Titulo']?></td>
+                <td><?php echo $row['CargaHoraria']?></td>
+                <td><?php echo $row['Ano']?></td>
+                <td><?php echo $row['Tipo']?></td>
+                <td><?php echo $row['Status']?></td>
+
+            </tr>
+
+            <?php
+        }
+        ?>
+        </tbody>
+ <!---------------------------------------------------------->
+
+    </table>
+
+
+</body>
+</html>

@@ -23,7 +23,6 @@ $_SESSION["atividades"] = $atividades;
 $sql = "SELECT senha,ra FROM Aluno WHERE senha LIKE md5('$senha') AND ra LIKE '$ra';";
 
 
-//echo $ra;
 
 if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
 {
