@@ -1,7 +1,7 @@
 <?php
 //$link = mysqli_connect("localhost", "root", "pp", "prog3");
 
-include('Database.php');
+include('../Database.php');
 $db = Database::getInstance();
 $link = $db->getConnection();
 // Check connection

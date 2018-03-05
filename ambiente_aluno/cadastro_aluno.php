@@ -9,7 +9,7 @@ server with default setting (user 'root' with no password) */
 
 //$link = mysqli_connect("localhost", "root", "123pimpim", "prog3");
 
-include('Database.php');
+include('../Database.php');
 $db = Database::getInstance();
 $link = $db->getConnection();
 // Check connection

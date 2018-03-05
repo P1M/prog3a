@@ -29,7 +29,7 @@
     <tr> <td class= "dir"> Carga Horária: </td> <td> <input class="campo" type="number" name="cargaHora" id="cargaHora"></td></tr>
     <tr> <td class= "dir"> Ano: </td> <td> <input class="campo" type="date" name="ano" id="ano" ></td></tr>
     <tr><td class="dir"> Tipo: </td> <td><?php
-    include('Database.php');
+    include('../Database.php');
     $db = Database::getInstance();
     $link = $db->getConnection();
 
