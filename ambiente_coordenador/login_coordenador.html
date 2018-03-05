@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <title>Sistema de Controle de Atividades Complementares</title>
+    <title>Login Coordenador</title>
 
     <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
 
@@ -15,13 +15,14 @@
 
 <body>
 
-
 <div class="login-card">
-    <h2>Login <br>Coordenador</h2>
-    <form>
-        <input type="text" name="user" placeholder="Email">
-        <input type="password" name="pass" placeholder="Password">
-        <input type="submit" name="login" class="login login-submit" value="login">
+
+    <h2>Login Coordenador</h2>
+
+    <form action="login_coordenador.php" method="post">
+        <input type="text" name="email" placeholder="E-mail">
+        <input type="password" name="senha" placeholder="Senha">
+        <input type="submit" name="enviar" id="enviar" class="login login-submit" value="Login">
     </form>
 
 
