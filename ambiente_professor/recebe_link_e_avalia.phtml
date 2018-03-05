@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Validação de Atividades pelo Professor</title>
+</head>
+
+<body>
+
+<style>
+    form {position: relative;
+        top: 0px; right: 0px; bottom: 0px; left: 250px;
+        padding: 10px; margin:1em auto;
+        background: #fff;box-sizing: border-box;}
+    h3 {color: #0000ff; font-size: 22px;text-align: center}
+    .campo{width:400px}
+    table .dir{font-family: cursive, helvetica; text-align: right; font-size: 18px}
+    .botao{width: 205px; height: 35px ; font-size: 18px; color: #0000ff;}
+</style>
+
+<?php
+ // Recebe o link e guarda
+ $HexRA = $_GET['RA'];
+ 
+ $RA = hexdec ($HexRA); // Converte de Hexadecimal para decimal
+?>
+
+
+<h3>Lista de Atividades Cadastradas</h3>
+
+
+
+    <table>
+        <thead>
+        <tr>
+            <td>Titulo</td>
+            <td>Carga Horária</td>
+            <td>Ano</td>
+            <td>Tipo</td>
+            <td>Status</td>
+            <td>Alterar Status</td>
+            <td>Justificativa</td>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        include('../Database.php');
+        $db = Database::getInstance();
+        $link = $db->getConnection();
+        $results = mysqli_query($link,"SELECT * FROM Atividades WHERE Aluno_RA like '$RA' ORDER BY Ano ASC;");
+        //echo $results;
+        while($row = mysqli_fetch_array($results)) {
+            ?>
+            <tr>
+                <td><?php echo $row['Titulo']?></td>
+                <td><?php echo $row['CargaHoraria']?></td>
+                <td><?php echo $row['Ano']?></td>
+                <td><?php echo $row['Tipo']?></td>
+                <td><?php echo $row['Status']?></td>
+                <form action="alterar_status.php" method="post">
+                <?php echo <input type="hidden" name="RA" value="$row['Aluno_RA']">?>
+                <?php echo <input type="hidden" name="titulo" value="$row['Titulo']">?>
+                <td><input type="text" name="novoStatus" placeholder="Novo Status"></td>
+                <td><input type="text" name="justificativa" placeholder="Justificativa"></td>
+                <input type="submit" name="enviar" id="enviar" class="submit" value="Alterar Status">
+                </form>
+
+            </tr>
+
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
