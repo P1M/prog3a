@@ -43,9 +43,10 @@ $sql2 = "INSERT INTO Senha (senha,CoordenadorAdministrador_email) VALUES ('$senh
 
 if(mysqli_query($link, $sql) and mysqli_query($link, $sql2)){
 
-    echo '<script type="text/javascript">alert("Coordenador cadastrado com sucesso!"); window.location.href=cadastrar_professor.html/script>';
-   // redirect('cadastrar_professor.html');
-
+    echo  "<script>alert('Coordenador cadastrado com Sucesso!');</script>";
+    echo '<script type="text/javascript">
+           window.location = "cadastrar_coordenador.html"
+      </script>';
 } else{
 
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);

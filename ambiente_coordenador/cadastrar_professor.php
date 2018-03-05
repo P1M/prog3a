@@ -40,9 +40,10 @@ $sql = "INSERT INTO Professor (nome,email) VALUES ('$nome', '$email');";
 
 if(mysqli_query($link, $sql)){
 
-    echo '<script type="text/javascript">alert("Professor cadastrado com sucesso!"); window.location.href=cadastrar_professor.html/script>';
-    redirect('cadastrar_professor.html');
-
+    echo  "<script>alert('Professor cadastrado com Sucesso!');</script>";
+    echo '<script type="text/javascript">
+           window.location = "cadastrar_professor.html"
+      </script>';
 } else{
 
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
