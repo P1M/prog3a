@@ -1,5 +1,5 @@
 <?php
-include('Database.php');
+include('../Database.php');
 $db = Database::getInstance();
 $link = $db->getConnection();
 // Check connection

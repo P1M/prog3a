@@ -7,7 +7,7 @@
  */
 //apos inserir redireciona pagina php para a pagina q aparece todas as atividades listadas para submissao
 Header('Location: cadastra_atividades_aluno.phtml');
-include('Database.php');
+include('../Database.php');
 $db = Database::getInstance();
 $link = $db->getConnection();
 // Check connection
