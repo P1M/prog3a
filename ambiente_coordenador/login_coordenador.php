@@ -26,7 +26,7 @@ AND CoordenadorAdministrador.tipo LIKE '1' ;";
 
 if(mysqli_num_rows(mysqli_query($link, $sql)) == 1)
 {
-    header("Location: tela_coordenador.html");
+    header("Location: cadastrar_professor.html");
 
 }else{
 
